@@ -65,33 +65,68 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_Person__ = __webpack_require__(2);
-var $ = __webpack_require__(1);
 
 
-class Adult extends __WEBPACK_IMPORTED_MODULE_0__modules_Person__["a" /* default */] {
-  payTaxes() {
-    console.log(this.name + " now owes $0 in taxes.");
-  }
-}
+var _MobileMenu = __webpack_require__(1);
 
-alert("testing 999999999");
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
-var john = new __WEBPACK_IMPORTED_MODULE_0__modules_Person__["a" /* default */]("John Doe", "blue");
-john.greet();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var jane = new Adult("Jane Smith", "orange");
-jane.greet();
-jane.payTaxes();
-
-$("h1").remove();
+var mobileMenu = new _MobileMenu2.default();
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(2);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var MobileMenu = function () {
+    function MobileMenu() {
+        _classCallCheck(this, MobileMenu);
+
+        this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
+        this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
+        this.events();
+    }
+
+    _createClass(MobileMenu, [{
+        key: "events",
+        value: function events() {
+            this.menuIcon.click(this.toggleTheMenu.bind(this));
+        }
+    }, {
+        key: "toggleTheMenu",
+        value: function toggleTheMenu() {
+            this.menuContent.toggleClass("site-header__menu-content--is-visible");
+        }
+    }]);
+
+    return MobileMenu;
+}();
+
+exports.default = MobileMenu;
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10694,22 +10729,6 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class Person {
-  constructor(fullName, favColor) {
-    this.name = fullName;
-    this.favoriteColor = favColor;
-  }
-  greet() {
-    console.log("Hi there, my name is " + this.name + " and my favorite color is " + this.favoriteColor + ".");
-  }
-}
-/* harmony default export */ __webpack_exports__["a"] = (Person);
 
 /***/ })
 /******/ ]);

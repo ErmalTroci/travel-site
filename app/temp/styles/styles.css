@@ -1155,12 +1155,14 @@ Instead edit gulp/templates/sprite*/
         position: absolute;
         top: 10px;
         right: 10px;
+
      }
 
 @media (min-width: 800px) {
 
 .site-header__menu-icon {
-            display: none
+                display: none
+
      }
     }
 
@@ -1174,6 +1176,10 @@ Instead edit gulp/templates/sprite*/
             display: block
     }
     }
+
+.site-header__menu-content--is-visible {
+             display: block;
+        }
 
 .primary-nav__pull-right {
         float: right;
