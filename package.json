@@ -30,6 +30,7 @@
     "gulp-usemin": "0.3.28",
     "gulp-watch": "^4.3.11",
     "jquery-smooth-scroll": "^2.2.0",
+    "lazysizes": "^4.0.1",
     "postcss-hexrgba": "^1.0.0",
     "postcss-import": "^11.0.0",
     "postcss-mixins": "^6.2.0",
